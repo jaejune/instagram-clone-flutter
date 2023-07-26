@@ -24,6 +24,12 @@ class $AssetsIconsGen {
   /// File path: assets/icons/home.svg
   String get home => 'assets/icons/home.svg';
 
+  /// File path: assets/icons/logo.svg
+  String get logo => 'assets/icons/logo.svg';
+
+  /// File path: assets/icons/plus_button.svg
+  String get plusButton => 'assets/icons/plus_button.svg';
+
   /// File path: assets/icons/reels-fill.svg
   String get reelsFill => 'assets/icons/reels-fill.svg';
 
@@ -37,8 +43,18 @@ class $AssetsIconsGen {
   String get shop => 'assets/icons/shop.svg';
 
   /// List of all assets
-  List<String> get values =>
-      [feedFill, feed, homeFill, home, reelsFill, reels, shopFill, shop];
+  List<String> get values => [
+        feedFill,
+        feed,
+        homeFill,
+        home,
+        logo,
+        plusButton,
+        reelsFill,
+        reels,
+        shopFill,
+        shop
+      ];
 }
 
 class $AssetsImagesGen {
@@ -48,8 +64,25 @@ class $AssetsImagesGen {
   AssetGenImage get profile =>
       const AssetGenImage('assets/images/profile.jpeg');
 
+  /// File path: assets/images/profile1.jpeg
+  AssetGenImage get profile1 =>
+      const AssetGenImage('assets/images/profile1.jpeg');
+
+  /// File path: assets/images/profile2.jpeg
+  AssetGenImage get profile2 =>
+      const AssetGenImage('assets/images/profile2.jpeg');
+
+  /// File path: assets/images/profile3.jpeg
+  AssetGenImage get profile3 =>
+      const AssetGenImage('assets/images/profile3.jpeg');
+
+  /// File path: assets/images/profile4.jpeg
+  AssetGenImage get profile4 =>
+      const AssetGenImage('assets/images/profile4.jpeg');
+
   /// List of all assets
-  List<AssetGenImage> get values => [profile];
+  List<AssetGenImage> get values =>
+      [profile, profile1, profile2, profile3, profile4];
 }
 
 class Assets {
