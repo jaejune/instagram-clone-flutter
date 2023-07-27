@@ -28,11 +28,14 @@ class $_AppTheme {
   static const List<Color> primaryText = [Color(0xFF004C8B), Color(0xFF004C8B)];
 }
 
-const kGradient = LinearGradient(colors: [
-  Color(0xFFFECD00),
-  Color(0xFFF9373F),
-  Color(0xFFC913B9),
-]);
+const kGradient = LinearGradient(
+    begin: Alignment.bottomLeft,
+    end: Alignment.topRight,
+    colors: [
+      Color(0xFFFECD00),
+      Color(0xFFF9373F),
+      Color(0xFFC913B9),
+    ]);
 
 ThemeData lightTheme() {
   return ThemeData(

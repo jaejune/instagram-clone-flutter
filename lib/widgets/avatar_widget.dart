@@ -17,7 +17,7 @@ class AvatarWidget extends StatelessWidget {
                 height: size * 1.2,
                 width: size * 1.2,
                 decoration:
-                    BoxDecoration(shape: BoxShape.circle, gradient: kGradient),
+                    const BoxDecoration(shape: BoxShape.circle, gradient: kGradient),
               ),
               Container(
                 height: size * 1.12,

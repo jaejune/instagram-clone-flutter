@@ -37,7 +37,7 @@ class NavigationScreen extends GetView<NavigationController> {
           child: Container(
         decoration: BoxDecoration(
             color: context.background,
-            border: Border(top: BorderSide(color: context.border))),
+            border: Border(top: BorderSide(color: context.border, width: 0.5))),
         height: 55,
         child: Row(
           children: [
@@ -83,15 +83,15 @@ class NavigationScreen extends GetView<NavigationController> {
                         Visibility(
                             visible: 4 == navigatorShell.currentIndex,
                             child: Container(
-                              height: 26,
-                              width: 26,
+                              height: 27,
+                              width: 27,
                               decoration: BoxDecoration(
                                   shape: BoxShape.circle, color: context.text),
                             )),
                         ClipOval(
                           child: SizedBox(
-                              width: 23,
-                              height: 23,
+                              width: 24,
+                              height: 24,
                               child: Assets.images.profile
                                   .image(fit: BoxFit.cover)),
                         )

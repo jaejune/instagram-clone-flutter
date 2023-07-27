@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:get/route_manager.dart';
+import 'package:get/get.dart';
 import 'package:instagram_clone/app_router.dart';
+import 'package:instagram_clone/services/user_service.dart';
 import 'package:instagram_clone/theme.dart';
 
 void main() {
+  Get.put(UserService());
   runApp(const MyApp());
 }
 
