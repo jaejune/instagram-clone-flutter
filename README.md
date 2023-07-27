@@ -1,16 +1,9 @@
-# instagram_clone
+## 플러터 인스타그램 클론 앱
 
-A new Flutter project.
+플러터 인스타그램 클론 앱 입니다.
 
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## 미리보기
+<p align="start">
+<img src="https://github.com/jaejune/instagram-clone-flutter/assets/76607580/c08c4bb6-d55e-47cd-90bd-5715ea901040" width="32%" height="50%"/>
+<img src="https://github.com/jaejune/instagram-clone-flutter/assets/76607580/cd24268c-bfae-43db-b0fc-7e83b972acd0" width="32%" height="50%"/>
+</p>
