@@ -128,6 +128,7 @@ class HomeScreen extends GetView<HomeController> {
         SliverList(
             delegate: SliverChildBuilderDelegate(
                 (context, index) => Obx(() => PostWidget(
+                      onPressProfile: () => controller.toProfile(context),
                       post: controller.postList[index],
                       onPressLike: () => controller.updateLike(index),
                     )),

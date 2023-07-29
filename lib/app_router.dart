@@ -8,6 +8,8 @@ import 'package:instagram_clone/screens/mypage/mypage_controller.dart';
 import 'package:instagram_clone/screens/mypage/mypage_screen.dart';
 import 'package:instagram_clone/screens/navigation/navigation_controller.dart';
 import 'package:instagram_clone/screens/navigation/navigation_screen.dart';
+import 'package:instagram_clone/screens/profile/profile_controller.dart';
+import 'package:instagram_clone/screens/profile/profile_screen.dart';
 import 'package:instagram_clone/screens/reels/reels_controller.dart';
 import 'package:instagram_clone/screens/reels/reels_screen.dart';
 import 'package:instagram_clone/screens/shop/shop_controller.dart';
@@ -19,9 +21,19 @@ class AppRouter {
   static const reels = 'reels';
   static const shop = 'shop';
   static const mypage = 'mypage';
+  static const profile = 'profile';
 
   static final router =
       GoRouter(initialLocation: '/home', navigatorKey: Get.key, routes: [
+    GoRoute(
+      parentNavigatorKey: Get.key,
+      path: '/profile',
+      name: profile,
+      builder: (context, state) => GetBuilder(
+        init: ProfileController(),
+        builder: (controller) => ProfileScreen(),
+      ),
+    ),
     StatefulShellRoute.indexedStack(
         builder: (context, state, navigationShell) => GetBuilder(
               init: NavigationController(),

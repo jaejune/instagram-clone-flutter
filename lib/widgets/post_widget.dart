@@ -6,50 +6,53 @@ import 'package:instagram_clone/theme.dart';
 import 'package:instagram_clone/widgets/avatar_widget.dart';
 
 class PostWidget extends StatelessWidget {
-  const PostWidget({super.key, required this.post, required this.onPressLike});
+  const PostWidget({super.key, required this.post, required this.onPressLike, required this.onPressProfile});
   final Post post;
   final Function onPressLike;
+  final Function onPressProfile;
   @override
   Widget build(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Container(
-          height: 50,
-          padding: const EdgeInsets.only(right: 13, left: 5),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Row(
+        GestureDetector(
+            onTap: () => onPressProfile(),
+            child: Container(
+              height: 50,
+              padding: const EdgeInsets.only(right: 13, left: 5),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  const AvatarWidget(size: 30, avatar: 'profile.jpeg'),
-                  const SizedBox(
-                    width: 8,
-                  ),
-                  Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    crossAxisAlignment: CrossAxisAlignment.start,
+                  Row(
                     children: [
-                      Text(
-                        post.profile.nickname,
-                        style: const TextStyle(
-                            fontSize: 13, fontWeight: FontWeight.bold),
+                      const AvatarWidget(size: 30, avatar: 'profile.jpeg'),
+                      const SizedBox(
+                        width: 8,
                       ),
-                      const Text(
-                        'Sponsored',
-                        style: TextStyle(fontSize: 11),
-                      ),
+                      Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            post.profile.nickname,
+                            style: const TextStyle(
+                                fontSize: 13, fontWeight: FontWeight.w600),
+                          ),
+                          const Text(
+                            'Sponsored',
+                            style: TextStyle(fontSize: 11),
+                          ),
+                        ],
+                      )
                     ],
+                  ),
+                  SvgPicture.asset(
+                    'assets/icons/more.svg',
+                    color: context.text,
                   )
                 ],
               ),
-              SvgPicture.asset(
-                'assets/icons/more.svg',
-                color: context.text,
-              )
-            ],
-          ),
-        ),
+            )),
         SizedBox(
             height: Get.width,
             width: Get.width,
@@ -87,7 +90,10 @@ class PostWidget extends StatelessWidget {
                     )
                   ],
                 ),
-                SvgPicture.asset('assets/icons/bookmark.svg')
+                SvgPicture.asset(
+                  'assets/icons/bookmark.svg',
+                  color: context.text,
+                )
               ],
             )),
         Padding(
@@ -97,7 +103,7 @@ class PostWidget extends StatelessWidget {
             children: [
               const Text(
                 '좋아요 100개',
-                style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
+                style: TextStyle(fontSize: 14, fontWeight: FontWeight.w600),
               ),
               const SizedBox(
                 height: 6,
@@ -109,7 +115,8 @@ class PostWidget extends StatelessWidget {
                         text: post.content,
                         style: const TextStyle(fontWeight: FontWeight.w400))
                   ],
-                  style: const TextStyle(fontSize: 14, fontWeight: FontWeight.bold))),
+                  style: const TextStyle(
+                      fontSize: 14, fontWeight: FontWeight.w600))),
               const SizedBox(
                 height: 6,
               ),
