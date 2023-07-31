@@ -39,9 +39,9 @@ const kGradient = LinearGradient(
 
 ThemeData lightTheme() {
   return ThemeData(
-      iconTheme: const IconThemeData(color: Color(0xFF000000)),
+      iconTheme: const IconThemeData(color: Colors.black),
       textTheme: const TextTheme(
-        bodyMedium: TextStyle(color: Color(0xFF000000)),
+        bodyMedium: TextStyle(color: Colors.black),
       ),
       brightness: Brightness.light,
       highlightColor: Colors.transparent,
@@ -69,9 +69,9 @@ ThemeData lightTheme() {
 
 ThemeData darkTheme() {
   return ThemeData(
-      iconTheme: const IconThemeData(color: Color(0xFFF5F5F5)),
+      iconTheme: const IconThemeData(color: Colors.white),
       textTheme: const TextTheme(
-        bodyMedium: TextStyle(color: Color(0xFFF5F5F5)),
+        bodyMedium: TextStyle(color: Colors.white),
       ),
       brightness: Brightness.dark,
       highlightColor: Colors.transparent,

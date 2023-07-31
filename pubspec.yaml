@@ -40,6 +40,7 @@ dependencies:
   transparent_image: ^2.0.0
   get: ^4.6.5
   theme_tailor_annotation: ^2.0.0
+  sliver_tools: ^0.2.9
 
 dev_dependencies:
   flutter_test:
@@ -85,6 +86,10 @@ flutter:
           weight: 600
         - asset: assets/fonts/Pretendard/Pretendard-Bold.otf
           weight: 700
+
+    - family: InstaIcons
+      fonts:
+        - asset: assets/fonts/InstaIcons.ttf
 
   assets:
     - assets/images/

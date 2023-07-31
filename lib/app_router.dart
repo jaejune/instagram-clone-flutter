@@ -31,7 +31,7 @@ class AppRouter {
       name: profile,
       builder: (context, state) => GetBuilder(
         init: ProfileController(),
-        builder: (controller) => ProfileScreen(),
+        builder: (controller) => const ProfileScreen(),
       ),
     ),
     StatefulShellRoute.indexedStack(

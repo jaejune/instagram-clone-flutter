@@ -49,3 +49,46 @@ class DefaultButton extends StatelessWidget {
         ));
   }
 }
+
+class DefaultIconButton extends StatelessWidget {
+  const DefaultIconButton(
+      {super.key,
+      this.margin,
+      this.padding,
+      required this.onPressed,
+      this.secondary = false,
+      required this.icon,
+      this.minWidth,
+      this.width,
+      this.iconSize,
+      this.iconColor = Colors.white});
+  final EdgeInsets? margin;
+  final EdgeInsets? padding;
+  final Function() onPressed;
+  final bool secondary;
+  final IconData icon;
+  final double? minWidth;
+  final double? width;
+  final double? iconSize;
+
+  final Color iconColor;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+        height: 32,
+        width: width ?? 32,
+        margin: margin ?? EdgeInsets.zero,
+        child: CupertinoButton(
+            minSize: 0,
+            padding: padding ?? EdgeInsets.zero,
+            onPressed: onPressed,
+            color: secondary ? context.secondary : context.primary,
+            borderRadius: BorderRadius.circular(8),
+            child: Icon(
+              icon,
+              color: secondary ? context.text : iconColor,
+              size: 16,
+            )));
+  }
+}

@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:get/get_state_manager/get_state_manager.dart';
 import 'package:go_router/go_router.dart';
 
 import 'package:instagram_clone/gen/assets.gen.dart';
+import 'package:instagram_clone/insta_icons.dart';
 import 'package:instagram_clone/screens/navigation/navigation_controller.dart';
 import 'package:instagram_clone/theme.dart';
 
@@ -15,19 +15,16 @@ class NavigationScreen extends GetView<NavigationController> {
   Widget _bottomNavBar(
     BuildContext context, {
     required Function() onTap,
-    required String active,
-    required String deactive,
+    required IconData active,
+    required IconData deactive,
     required int index,
   }) {
     return Expanded(
         child: GestureDetector(
             onTap: onTap,
             behavior: HitTestBehavior.opaque,
-            child: SvgPicture.asset(
-              'assets/icons/${index == navigatorShell.currentIndex ? active : deactive}.svg',
-              height: 24,
-              colorFilter: ColorFilter.mode(context.text, BlendMode.srcIn),
-            )));
+            child: Icon(
+                index == navigatorShell.currentIndex ? active : deactive)));
   }
 
   @override
@@ -46,32 +43,32 @@ class NavigationScreen extends GetView<NavigationController> {
               onTap: () => navigatorShell.goBranch(0,
                   initialLocation: 0 == navigatorShell.currentIndex),
               index: 0,
-              active: 'home-fill',
-              deactive: 'home',
+              active: InstaIcons.homeFill,
+              deactive: InstaIcons.home,
             ),
             _bottomNavBar(
               context,
               onTap: () => navigatorShell.goBranch(1,
                   initialLocation: 1 == navigatorShell.currentIndex),
               index: 1,
-              active: 'feed-fill',
-              deactive: 'feed',
+              active: InstaIcons.feedFill,
+              deactive: InstaIcons.feed,
             ),
             _bottomNavBar(
               context,
               onTap: () => navigatorShell.goBranch(2,
                   initialLocation: 2 == navigatorShell.currentIndex),
               index: 2,
-              active: 'reels-fill',
-              deactive: 'reels',
+              active: InstaIcons.reelsFill,
+              deactive: InstaIcons.reels,
             ),
             _bottomNavBar(
               context,
               onTap: () => navigatorShell.goBranch(3,
                   initialLocation: 3 == navigatorShell.currentIndex),
               index: 3,
-              active: 'shop-fill',
-              deactive: 'shop',
+              active: InstaIcons.shopFill,
+              deactive: InstaIcons.shop,
             ),
             Expanded(
                 child: GestureDetector(
@@ -100,7 +97,9 @@ class NavigationScreen extends GetView<NavigationController> {
           ],
         ),
       )),
-      body: SafeArea(child: navigatorShell),
+      body: SafeArea(
+        
+        child: navigatorShell),
     );
   }
 }

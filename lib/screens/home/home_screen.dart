@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get_state_manager/get_state_manager.dart';
 import 'package:instagram_clone/gen/assets.gen.dart';
+import 'package:instagram_clone/insta_icons.dart';
 import 'package:instagram_clone/screens/home/home_controller.dart';
 import 'package:instagram_clone/theme.dart';
 import 'package:instagram_clone/widgets/avatar_widget.dart';
@@ -43,27 +44,25 @@ class HomeScreen extends GetView<HomeController> {
                   Row(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      SvgPicture.asset('assets/icons/logo.svg',
-                          color: context.text),
+                      SvgPicture.asset(
+                        'assets/icons/logo.svg',
+                        color: context.text,
+                      ),
                       const SizedBox(
                         width: 8,
                       ),
-                      SvgPicture.asset(
-                        'assets/icons/arrow_down.svg',
-                        color: context.text,
-                        height: 18,
+                      const Icon(
+                        InstaIcons.arrowDown,
+                        size: 18,
                       )
                     ],
                   ),
                   Wrap(
                     spacing: 24,
                     children: [
-                      SvgPicture.asset('assets/icons/heart.svg',
-                          color: context.text),
-                      SvgPicture.asset('assets/icons/message.svg',
-                          color: context.text),
-                      SvgPicture.asset('assets/icons/add.svg',
-                          color: context.text),
+                      SvgPicture.asset('assets/icons/heart.svg'),
+                      const Icon(InstaIcons.message),
+                      const Icon(InstaIcons.add),
                     ],
                   )
                 ],
@@ -117,8 +116,8 @@ class HomeScreen extends GetView<HomeController> {
                                   )),
                             ],
                           )),
-                      ...List.generate(controller.storyList.length, (index) {
-                        final profile = controller.storyList[index];
+                      ...List.generate(controller.profileList.length, (index) {
+                        final profile = controller.profileList[index];
                         return _story(context,
                             avatar: profile.avatar, nickname: profile.nickname);
                       })

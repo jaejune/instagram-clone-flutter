@@ -1,12 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+
 import 'package:get/route_manager.dart';
+import 'package:instagram_clone/insta_icons.dart';
 import 'package:instagram_clone/models/post.dart';
 import 'package:instagram_clone/theme.dart';
 import 'package:instagram_clone/widgets/avatar_widget.dart';
 
 class PostWidget extends StatelessWidget {
-  const PostWidget({super.key, required this.post, required this.onPressLike, required this.onPressProfile});
+  const PostWidget(
+      {super.key,
+      required this.post,
+      required this.onPressLike,
+      required this.onPressProfile});
   final Post post;
   final Function onPressLike;
   final Function onPressProfile;
@@ -46,10 +52,7 @@ class PostWidget extends StatelessWidget {
                       )
                     ],
                   ),
-                  SvgPicture.asset(
-                    'assets/icons/more.svg',
-                    color: context.text,
-                  )
+                  const Icon(InstaIcons.more)
                 ],
               ),
             )),
@@ -77,23 +80,14 @@ class PostWidget extends StatelessWidget {
                     const SizedBox(
                       width: 12,
                     ),
-                    SvgPicture.asset(
-                      'assets/icons/comment.svg',
-                      color: context.text,
-                    ),
+                    const Icon(InstaIcons.comment),
                     const SizedBox(
                       width: 12,
                     ),
-                    SvgPicture.asset(
-                      'assets/icons/share.svg',
-                      color: context.text,
-                    )
+                    const Icon(InstaIcons.share)
                   ],
                 ),
-                SvgPicture.asset(
-                  'assets/icons/bookmark.svg',
-                  color: context.text,
-                )
+                const Icon(InstaIcons.bookmark)
               ],
             )),
         Padding(
