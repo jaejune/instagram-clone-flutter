@@ -12,10 +12,12 @@ class PostWidget extends StatelessWidget {
       {super.key,
       required this.post,
       required this.onPressLike,
+      this.enableHero = true,
       required this.onPressProfile});
   final Post post;
   final Function onPressLike;
   final Function onPressProfile;
+  final bool enableHero;
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -59,10 +61,14 @@ class PostWidget extends StatelessWidget {
         SizedBox(
             height: Get.width,
             width: Get.width,
-            child: Image.asset(
-              'assets/images/${post.image}',
-              fit: BoxFit.cover,
-            )),
+            child: HeroMode(
+              enabled: enableHero,
+                child: Hero(
+                    tag: post.image,
+                    child: Image.asset(
+                      'assets/images/${post.image}',
+                      fit: BoxFit.cover,
+                    )))),
         Container(
             height: 44,
             padding: const EdgeInsets.only(left: 12, right: 13),

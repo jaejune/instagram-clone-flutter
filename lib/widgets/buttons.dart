@@ -92,3 +92,33 @@ class DefaultIconButton extends StatelessWidget {
             )));
   }
 }
+
+class DefaultTextButton extends StatelessWidget {
+  const DefaultTextButton(
+      {super.key,
+      required this.text,
+      this.onPressed,
+      this.color,
+      this.fontSize,
+      this.fontWeight});
+
+  final String text;
+  final FontWeight? fontWeight;
+  final double? fontSize;
+  final Color? color;
+  final Function()? onPressed;
+  @override
+  Widget build(BuildContext context) {
+    return CupertinoButton(
+        padding: EdgeInsets.zero,
+        onPressed: onPressed,
+        child: Text(
+          text,
+          style: TextStyle(
+              fontWeight: fontWeight ?? FontWeight.w600,
+              fontFamily: 'Pretendard',
+              fontSize: fontSize ?? 16,
+              color: color ?? context.primary),
+        ));
+  }
+}

@@ -219,20 +219,23 @@ class ProfileScreen extends GetView<ProfileController> {
                                         children: [
                                           Expanded(
                                               child: DefaultButton(
-                                            margin: const EdgeInsets.only(right: 6),
+                                            margin:
+                                                const EdgeInsets.only(right: 6),
                                             onPressed: () {},
                                             text: '팔로우',
                                           )),
                                           Expanded(
                                               child: DefaultButton(
-                                            margin: const EdgeInsets.only(right: 6),
+                                            margin:
+                                                const EdgeInsets.only(right: 6),
                                             secondary: true,
                                             onPressed: () {},
                                             text: '메시지',
                                           )),
                                           Expanded(
                                               child: DefaultButton(
-                                            margin: const EdgeInsets.only(right: 6),
+                                            margin:
+                                                const EdgeInsets.only(right: 6),
                                             secondary: true,
                                             onPressed: () {},
                                             text: '이메일',
@@ -304,9 +307,15 @@ class ProfileScreen extends GetView<ProfileController> {
                             itemCount: fakePostList.length,
                             itemBuilder: (context, index) {
                               final post = fakePostList[index];
-                              return Image.asset(
-                                'assets/images/${post.image}',
-                                fit: BoxFit.cover,
+                              return GestureDetector(
+                                onTap: () =>
+                                    controller.toPost(context, post),
+                                child: Hero(
+                                    tag: post.image,
+                                    child: Image.asset(
+                                      'assets/images/${post.image}',
+                                      fit: BoxFit.cover,
+                                    )),
                               );
                             },
                           ),
