@@ -196,7 +196,9 @@ class _MultiAxisDismissiblePageState extends State<MultiAxisDismissiblePage>
                 ..translate(details.offset.dx, details.offset.dy)
                 ..scale(details.scale, details.scale),
               child: ClipRRect(
-                borderRadius: BorderRadius.circular(details.radius),
+                borderRadius: details.overallDragValue > 0
+                    ? BorderRadius.circular(details.radius)
+                    : BorderRadius.zero,
                 child: child,
               ),
             ),
